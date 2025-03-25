@@ -14,6 +14,7 @@ export default function TabNavigation({
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <div className="flex border-b border-[#e0e0e0]">
         <button
+          id="all"
           className={`flex-1 py-3 px-4 font-medium text-center border-b-2 transition-colors flex items-center justify-center ${
             activeTab === "all"
               ? "border-[#579dff] text-[#579dff]"
@@ -25,6 +26,7 @@ export default function TabNavigation({
           <span>Все</span>
         </button>
         <button
+          id="active"
           className={`flex-1 py-3 px-4 font-medium text-center border-b-2 transition-colors flex items-center justify-center ${
             activeTab === "active"
               ? "border-[#f59e0b] text-[#f59e0b]"
@@ -36,6 +38,7 @@ export default function TabNavigation({
           <span>Активные</span>
         </button>
         <button
+          id="completed"
           className={`flex-1 py-3 px-4 font-medium text-center border-b-2 transition-colors flex items-center justify-center ${
             activeTab === "completed"
               ? "border-[#10b981] text-[#10b981]"

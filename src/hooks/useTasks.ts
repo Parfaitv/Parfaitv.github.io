@@ -25,7 +25,6 @@ export const useTasks = () => {
       id: `task-${Date.now()}`,
       text: text.trim(),
       completed: false,
-      createdAt: Date.now(),
     };
 
     setTasks((prevTasks) => [newTask, ...prevTasks]);

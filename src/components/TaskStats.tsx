@@ -49,6 +49,7 @@ export default function TaskStats({ stats }: TaskStatsProps) {
           </div>
           <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
             <div
+              id="progress-bar"
               className="h-full bg-[#10b981] rounded-full transition-all duration-500"
               style={{
                 width: `${completionPercentage}%`,
