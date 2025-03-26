@@ -44,6 +44,7 @@ export default function TaskList({
               >
                 <Checkbox
                   checked={task.completed}
+                  onCheckedChange={() => onTaskToggle(task.id)}
                   className={`w-5 h-5 mr-3 rounded-full border-2 ${
                     task.completed
                       ? "border-completed text-completed"
@@ -51,11 +52,8 @@ export default function TaskList({
                   }`}
                 />
                 <span
-                  onClick={() => onTaskToggle(task.id)}
-                  className={`flex-grow text-dark-text ${
-                    task.completed
-                      ? "line-through text-light-text"
-                      : "text-dark-text"
+                  className={`flex-grow text-dark ${
+                    task.completed ? "line-through text-light" : "text-dark"
                   }`}
                 >
                   {task.text}
