@@ -39,28 +39,30 @@ export default function TaskList({
           {tasks.map((task) => (
             <li key={task.id} className="fade-in task-transition">
               <div
-                className={`flex items-center p-3 rounded-lg border border-divider hover:border-primary hover:shadow-sm group 
+                className={`flex items-center rounded-lg border border-divider hover:border-primary hover:shadow-sm group 
                   ${task.completed ? "bg-green-50/50" : "bg-white"}`}
               >
-                <Checkbox
-                  checked={task.completed}
-                  onCheckedChange={() => onTaskToggle(task.id)}
-                  className={`w-5 h-5 mr-3 rounded-full border-2 ${
-                    task.completed
-                      ? "border-completed text-completed"
-                      : "border-primary text-primary"
-                  }`}
-                />
-                <span
-                  className={`flex-grow text-dark ${
-                    task.completed ? "line-through text-light" : "text-dark"
-                  }`}
+                <div
+                  onClick={() => onTaskToggle(task.id)}
+                  className={`flex flex-grow items-center p-3`}
                 >
-                  {task.text}
-                </span>
+                  <Checkbox
+                    checked={task.completed}
+                    className={`w-5 h-5 mr-3 rounded-full border-2`}
+                  />
+                  <span
+                    className={`flex-grow text-dark ${
+                      task.completed
+                        ? "line-through text-light-100"
+                        : "text-dark"
+                    }`}
+                  >
+                    {task.text}
+                  </span>
+                </div>
                 <button
                   onClick={() => onTaskDelete(task.id)}
-                  className="text-light-text opacity-0 group-hover:opacity-100 hover:text-destructive transition-opacity duration-200"
+                  className="text-light-text mr-3 opacity-0 group-hover:opacity-100 hover:text-destructive transition-opacity duration-200"
                   aria-label="Удалить задачу"
                 >
                   <Trash2 className="w-4 h-4" />
